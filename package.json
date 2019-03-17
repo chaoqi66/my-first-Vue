@@ -15,6 +15,7 @@
     "jquery": "^3.3.1",
     "mint-ui": "^2.2.13",
     "vue": "^2.6.9",
+    "vue-resource": "^1.5.1",
     "vue-router": "^3.0.2"
   },
   "devDependencies": {
