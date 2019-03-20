@@ -1,9 +1,15 @@
 <template>
     <div>
         <mt-swipe :auto="4000">
-             <mt-swipe-item>1</mt-swipe-item>
-             <mt-swipe-item>2</mt-swipe-item>
-             <mt-swipe-item>3</mt-swipe-item>
+             <mt-swipe-item>
+                 <img src="../../images/夜曲.jpg" alt="">
+             </mt-swipe-item>
+             <mt-swipe-item>
+                 <img src="../../images/8.jpg" alt="">
+             </mt-swipe-item>
+             <mt-swipe-item>
+                 <img src="../../images/7.jpg" alt="">
+             </mt-swipe-item>
         </mt-swipe>
 
         <!-- 九宫格改造成六格 -->
@@ -20,9 +26,12 @@
 		             <div class="mui-media-body">图片分享</div>
                  </router-link>
             </li>
-		     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                 <router-link to="home/goodslist">
 		             <img src="../../images/menu3.png" alt="">
-		             <div class="mui-media-body">商品购买</div></a></li>
+		             <div class="mui-media-body">商品购买</div>
+                 </router-link>
+            </li>
 		     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		             <img src="../../images/menu4.png" alt="">
 		             <div class="mui-media-body">留言反馈</div></a></li>
@@ -43,14 +52,8 @@
 <style scoped lang="scss">
     .mint-swipe{
         height: 200px; 
-        .mint-swipe-item:nth-child(1) {
-            background-color: red;
-        }  
-        .mint-swipe-item:nth-child(2) {
-            background-color: blue;
-        }
-        .mint-swipe-item:nth-child(3) {
-            background-color: pink;
+        img {
+            width: 100%;
         }
     }
 

@@ -11,10 +11,15 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 //按需导入
-import { Header,Swipe,SwipeItem } from 'mint-ui'
-Vue.component(Header.name, Header)
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
+// import { Header,Swipe,SwipeItem } from 'mint-ui'
+// Vue.component(Header.name, Header)
+// Vue.component(Swipe.name, Swipe)
+// Vue.component(SwipeItem.name, SwipeItem)
+
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
+import 'mint-ui/lib/style.css'
+
 //导入MUI
 import './lib/MUI/css/mui.css'
 import './lib/MUI/css/icons-extra.css'
