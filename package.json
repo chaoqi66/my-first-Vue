@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open --hot --port 3000"
+    "dev": "webpack-dev-server --open --hot --port 3000 --host 192.168.0.116"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
     "jquery": "^3.3.1",
     "mint-ui": "^2.2.13",

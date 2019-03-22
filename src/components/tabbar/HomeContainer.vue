@@ -5,7 +5,9 @@
                  <img src="../../images/夜曲.jpg" alt="">
              </mt-swipe-item>
              <mt-swipe-item>
-                 <img src="../../images/8.jpg" alt="">
+                 <a href="https://v.youku.com/v_show/id_XNDAwMDcwNzQxMg==.html?spm=a2h3j.8428770.3416059.1">
+                    <img src="../../images/8.jpg" alt="">
+                 </a>
              </mt-swipe-item>
              <mt-swipe-item>
                  <img src="../../images/7.jpg" alt="">
@@ -27,7 +29,7 @@
                  </router-link>
             </li>
 		     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                 <router-link to="home/goodslist">
+                 <router-link to="/home/goodslist">
 		             <img src="../../images/menu3.png" alt="">
 		             <div class="mui-media-body">商品购买</div>
                  </router-link>
@@ -38,9 +40,11 @@
 		     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		             <img src="../../images/menu5.png" alt="">
 		             <div class="mui-media-body">视频专区</div></a></li>
-		     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                 <router-link to="/home/me">
 		             <img src="../../images/menu6.png" alt="">
-		             <div class="mui-media-body">联系我们</div></a></li>
+		             <div class="mui-media-body">联系我们</div>
+                </router-link></li>
 	      </ul>
     </div>
 </template>

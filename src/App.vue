@@ -5,7 +5,6 @@
       <span slot="left" @click="goback" v-show="flag">
     	<mt-button icon="back">返回</mt-button>
       </span>
-      <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
 
     <!-- 中间留坑的地方 -->
@@ -29,9 +28,9 @@
         </span>
         <span class="mui-tab-label">购物车</span>
       </router-link>
-      <router-link class="mui-tab-item1" to="/search">
-        <span class="mui-icon mui-icon-search"></span>
-        <span class="mui-tab-label">搜索</span>
+      <router-link class="mui-tab-item1" to="/more">
+        <span class="mui-icon mui-icon-more"></span>
+        <span class="mui-tab-label">留言</span>
       </router-link>
     </nav>
   </div>

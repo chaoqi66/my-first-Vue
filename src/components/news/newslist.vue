@@ -1,54 +1,48 @@
 <template>
     <div>
         <ul class="mui-table-view">
-			<li class="mui-table-view-cell mui-media">
-				<a href="javascript:;">
-					<img class="mui-media-object mui-pull-left" src="https://avatars1.githubusercontent.com/u/48397452?s=40&u=d52e43a9f8f529843814c5c905e5795636d484a3&v=4">
+			<li class="mui-table-view-cell mui-media" v-for="itme in newslist" :key="itme.id">
+				<router-link :to="'/home/newsinfo/'+itme.id">
+					<img class="mui-media-object mui-pull-left" :src="itme.img_url">
 					<div class="mui-media-body">
-						<h1>幸福</h1>
+						<h1>{{ itme.title }}</h1>
 						<p class='mui-ellipsis'>
-                            <span>发布时间：2014-12-12</span>
-                            <span>点击：0次</span>
+                            <span>发布时间：{{ itme.add_time }}</span>
+                            <span>点击：{{ itme.click }} </span>
                         </p>
 					</div>
-				</a>
-			</li>
-			<li class="mui-table-view-cell mui-media">
-				<a href="javascript:;">
-					<img class="mui-media-object mui-pull-left" src="https://avatars1.githubusercontent.com/u/48397452?s=40&u=d52e43a9f8f529843814c5c905e5795636d484a3&v=4">
-					<div class="mui-media-body">
-						<h1>木屋</h1>
-						<p class='mui-ellipsis'>
-                            <span>发布时间：2014-12-12</span>
-                            <span>点击：0次</span>
-                        </p>
-					</div>
-				</a>
-			</li>
-			<li class="mui-table-view-cell mui-media">
-				<a href="javascript:;">
-					<img class="mui-media-object mui-pull-left" src="https://avatars1.githubusercontent.com/u/48397452?s=40&u=d52e43a9f8f529843814c5c905e5795636d484a3&v=4">
-					<div class="mui-media-body">
-						<h1>CBD</h1>
-						<p class='mui-ellipsis'>
-                            <span>发布时间：2014-12-12</span>
-                            <span>点击：0次</span>
-                        </p>
-					</div>
-				</a>
+				</router-link>
 			</li>
 		</ul>
     </div>
 </template>
 
 <script>
+
 export default {
-    
+	data(){
+		return {
+			newslist: []
+		}
+	},
+	
+    methods: {
+		getNewsList(){
+			this.$axios.get('/static/mock/getnewslist.json').then(res => {
+				this.newslist=res.data.message
+			})
+		}
+	},
+	mounted() {
+		this.getNewsList();
+	},
+	
 }
 </script>
 
 <style lang="scss" scoped>
     .mui-table-view{
+		margin-bottom: 50px;
         li {
             h1 {
                 font-size: 14px;

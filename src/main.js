@@ -9,6 +9,10 @@ import router from './router.js'
 //导入并且安装vue-resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
+import axios from 'axios'
+Vue.prototype.$axios=axios
+// Vue.http.options.root='http://localhost:8080'
+Vue.http.options.emulateJSON=true
 
 //按需导入
 // import { Header,Swipe,SwipeItem } from 'mint-ui'
