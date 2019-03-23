@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <!-- 头部区域 -->
-    <mt-header fixed title="Vue项目">
+    <mt-header fixed title="没后端不够完善，请谅解">
       <span slot="left" @click="goback" v-show="flag">
     	<mt-button icon="back">返回</mt-button>
       </span>
@@ -67,10 +67,12 @@ export default {
 .app-container {
   padding-top: 40px;
   overflow-x: hidden;
+  position: relative;
 }
 .v-enter {
   opacity: 0;
   transform: translateX(100%);
+  position: absolute;
 }
 .v-leave-to {
   opacity: 0;

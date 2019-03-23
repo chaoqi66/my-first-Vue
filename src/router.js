@@ -10,7 +10,7 @@ import MY from './components/me/me.vue'
 import PhotoList from './components/PhotoList/PhotoList.vue'
 import GoodsList from './components/goods/GoodsList.vue'
 import NewsInfo from './components/news/newsinfo.vue'
-
+import GoodsInfo from './components/goods/GoodsInfo.vue'
 //创建路由对象
 var router = new VueRouter({
     routes:[//配置路由规则
@@ -23,7 +23,8 @@ var router = new VueRouter({
       { path: '/home/photolist', component: PhotoList },
       { path: '/home/GoodsList', component: GoodsList },
       { path: '/home/me', component: MY },
-      { path: '/home/newsinfo/:id', component: NewsInfo}
+      { path: '/home/newsinfo/:id', component: NewsInfo},
+      { path: '/home/goodsinfo/:id', component: GoodsInfo}
     ],
     linkActiveClass: 'mui-active'
   })

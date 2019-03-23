@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import comment from '../sub/comment.vue'
 
 
 export default {

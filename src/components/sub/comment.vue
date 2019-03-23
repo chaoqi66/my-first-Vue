@@ -43,7 +43,7 @@ export default {
             if (this.msg.trim().length===0) {
                 return Toast("评论不能为空")
             }else {
-                return Toast("此功能尚未完善")
+                return Toast("此功能正在维护中")
             }
 
             

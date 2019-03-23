@@ -1,54 +1,43 @@
 <template>
     <div class="goods-list">
-        <div class="goods-item">
-            <img src="https://img10.360buyimg.com/n7/jfs/t1/24714/24/8640/124174/5c77ab53E9e515e2e/8b1aa5d1fc7a5e23.jpg" alt="">
-            <h1>小米8（Mi）指纹探索版，晓龙 855处理器，高清 三摄像</h1>
+        <router-link class="goods-item" v-for="item in goodslist" :to="'/home/goodsinfo/' + item.id" 
+        tag="div" :key="item.id">
+            <img :src="item.img_url" alt="">
+            <h1> {{ item.title }} </h1>
             <div class="info">
                 <p class="price">
-                    <span class="now">￥1999</span>
-                    <span class="old">￥2199</span>
+                    <span class="now">￥ {{ item.sell }} </span>
+                    <span class="old">￥ {{ item.market }} </span>
                 </p>
                 <p class="sell">
                     <span>热卖中</span>
                     <span>剩余60件</span>
                 </p>
             </div>
-        </div>
-        <div class="goods-item">
-            <img src="https://img10.360buyimg.com/n7/jfs/t1/24714/24/8640/124174/5c77ab53E9e515e2e/8b1aa5d1fc7a5e23.jpg" alt="">
-            <h1>小米8指纹探索版，晓龙855处理器，高清摄像</h1>
-            <div class="info">
-                <p class="price">
-                    <span class="now">￥1999</span>
-                    <span class="old">￥2199</span>
-                </p>
-                <p class="sell">
-                    <span>热卖中</span>
-                    <span>剩余60件</span>
-                </p>
-            </div>
-        </div>
-        <div class="goods-item">
-            <img src="https://img10.360buyimg.com/n7/jfs/t1/24714/24/8640/124174/5c77ab53E9e515e2e/8b1aa5d1fc7a5e23.jpg" alt="">
-            <h1>小米8指纹探索版，晓龙855处理器，高清摄像</h1>
-            <div class="info">
-                <p class="price">
-                    <span class="now">￥1999</span>
-                    <span class="old">￥2199</span>
-                </p>
-                <p class="sell">
-                    <span>热卖中</span>
-                    <span>剩余60件</span>
-                </p>
-            </div>
-        </div>
+        </router-link>
+     
         
     </div>
 </template>
 
 <script>
 export default {
+    data(){
+        return {
+            goodslist: []
+        }
+    },
     
+    methods: {
+        getgoodslist(){
+            this.$axios.get('/static/mock/goodslist.json').then(res => {
+                this.goodslist=res.data.message
+            })
+        }
+    },
+    mounted(){
+        this.getgoodslist()
+    },
 }
 </script>
 

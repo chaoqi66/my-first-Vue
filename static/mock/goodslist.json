@@ -1,0 +1,62 @@
+{
+    "status": 0,
+    "message": [
+        {
+            "id": 1,
+            "title": "华为（HUAWEI） 荣耀10青春版 全网通4G智能手机 追剧王者吃鸡神器 ",
+            "sell":1766,
+            "market": 1899,
+            "residue": 80,
+            "img_url":"https://m.360buyimg.com/babel/jfs/t1/16022/23/4299/88956/5c30629aE711234e4/908d6d03b4429651.jpg"  
+        },
+        {
+            "id": 2,
+            "title": "小米（MI） 小米8青春版 全网通 手机 梦幻蓝 全网通 6GB+64GB ",
+            "sell":1266,
+            "market": 1499,
+            "residue": 60,
+            "img_url":"https://m.360buyimg.com/babel/jfs/t1/18167/26/7015/71139/5c666896E4d3f200d/b60a1ece807a1fef.jpg"  
+        },
+        {
+            "id": 3,
+            "title": "小米9 战斗天使 游戏手机8 幻彩蓝 全网通（6GB+128GB） ",
+            "sell": 3388,
+            "market": 3488,
+            "residue": 88,
+            "img_url":"https://m.360buyimg.com/babel/jfs/t1/15705/22/7679/123150/5c6e70a3E194a420c/95aa47866deaa8d0.jpg"  
+        },
+        {
+            "id": 4,
+            "title": "华为（HUAWEI） 华为荣耀V20手机x 魅海蓝 【8G+128G】 ",
+            "sell":3499,
+            "market": 3688,
+            "residue": 64,
+            "img_url":"https://m.360buyimg.com/babel/jfs/t1/31287/16/1753/725809/5c60e1ffEf405092e/99bf859855a3a872.png"  
+        },
+        {
+            "id": 5,
+            "title": "vivo iQOO 水滴全面屏 超广角AI三摄拍照 高通骁龙855 ",
+            "sell":2999,
+            "market": 3100,
+            "residue": 11,
+            "img_url":"https://m.360buyimg.com/babel/jfs/t1/14681/20/8825/95800/5c791f08E28429aa3/2a4fe0637d667bae.jpg"  
+        },
+        {
+            "id": 6,
+            "title": "索尼（SONY） Xperia 10 Plus 21:9全高清宽屏显示屏 4K视频摄录 AI侧屏感应 海军蓝 ",
+            "sell":2799,
+            "market": 2899,
+            "residue": 63,
+            "img_url":"https://m.360buyimg.com/babel/jfs/t1/27632/33/7613/63602/5c6e3b16E1cd2e47e/26c2a5c4b276f0d5.jpg"  
+        },
+        {
+            "id": 7,
+            "title": "小米 红米Redmi 红米Note7手机 小金刚 全网通 暮光金 6G+64G ",
+            "sell":1499,
+            "market": 1600,
+            "residue": 98,
+            "img_url":"https://m.360buyimg.com/babel/jfs/t1/20661/13/6259/100599/5c4a7e36Ea7852045/23f05ad64c2f29f8.jpg"  
+        }
+      
+    ]
+}
