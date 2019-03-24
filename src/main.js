@@ -28,14 +28,52 @@ import 'mint-ui/lib/style.css'
 import './lib/MUI/css/mui.css'
 import './lib/MUI/css/icons-extra.css'
 
+//注册vuex
+// import Vuex from 'vuex'
+// Vue.ues(Vuex)
+// var store=new Vuex.Store({
+//   state: {
+//     car: []    //把购物车里的数据用一个数组储存起来，包含id,count,price,selected
+//   },
+//   mutations: {
+//     addtocar(state,goodsinfo){
+//       //开始认为没找到
+//       var flag = false
+
+//       state.car.some(item => {
+//         if (item.id == goodsinfo.id) {
+//           item.count += parseInt(goodsinfo.count)
+//           flag = true
+//           return true
+//         }
+//       })
+
+//       // 如果最终，循环完毕，得到的 flag 还是 false，则把商品数据直接 push 到 购物车中
+//       if (!flag) {
+//         state.car.push(goodsinfo)
+//       }
+
+//     }
+//   },
+//   getters: {}
+// })
+
 
 //导入APP根组件
 import app from './App.vue'
+
+// 导入格式化时间的插件
+import moment from 'moment'
+//全局过滤器
+Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+  return moment(dataStr).format(pattern)
+})
 
 
 //创建实例
 var vm=new Vue({
   el:'#app',
   render: c =>c(app),
-  router    //挂载到实例上去
+  router,    //挂载到实例上去
+  // store
 })

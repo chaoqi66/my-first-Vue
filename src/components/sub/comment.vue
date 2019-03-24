@@ -8,9 +8,9 @@
         <div class="cmt-list">
             <div class="cmt-itme" v-for="(item,i) in comments" :key="item.id">
                 <div class="title">
-                    第{{i+1}}楼 &nbsp;&nbsp;用户：匿名用户 &nbsp;&nbsp;发表时间：{{item.time}}
+                    第{{i+1}}楼 &nbsp;&nbsp;用户：匿名用户 &nbsp;&nbsp;发表时间：{{item.created_time | dateFormat}}
                 </div>
-                <div class="body"> {{ item.content }} </div>
+                <div class="body"> {{ item.desc }} </div>
             </div>
 
         </div>
@@ -21,6 +21,7 @@
 
 <script>
 import {Toast} from 'mint-ui'
+
 
 export default {
     data(){
@@ -34,19 +35,31 @@ export default {
     },
     methods: {
         getcomment(){
-            this.$axios.get('/static/mock/comment.json').then(res =>{
-                this.comments=res.data.message
+            this.$axios.get('http://47.102.154.102/api/v1/common/topic').then(res =>{
+                this.comments=res.data
             })
         },
         postcomment(){
 
             if (this.msg.trim().length===0) {
                 return Toast("评论不能为空")
-            }else {
-                return Toast("此功能正在维护中")
             }
-
+            // else {
+            //     return Toast("此功能正在维护中")
+            // }
             
+
+            this.$axios.post('http://47.102.154.102/api/v1/common/topic', {
+                 "desc": this.msg.trim(),
+                 "name": Date.now()
+            },{emulateJSON: true})
+            .then(res => {
+                var cmt = {  "desc": this.msg.trim(), "name": Date.now()}
+                this.comments.unshift(cmt)
+                this.msg=""
+            })
+        //     // var instance = this.$axios.create({ headers: {'content-type': 'application/x-www-form-urlencoded'} });
+            // instance.post('/static/mock/comment.json', {}).then(res => res.data)
         }
     },
 

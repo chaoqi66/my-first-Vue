@@ -11,7 +11,7 @@
                 </p>
                 <p class="sell">
                     <span>热卖中</span>
-                    <span>剩余60件</span>
+                    <span>剩余 {{ item.residue }} 件</span>
                 </p>
             </div>
         </router-link>
