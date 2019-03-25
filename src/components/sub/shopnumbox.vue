@@ -1,5 +1,5 @@
 <template>
-  <div class="mui-numbox" data-numbox-min='1'  style="height:25px">
+  <div class="mui-numbox" data-numbox-min='1'  style="height:25px;width:110px">
     <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
     <input id="test" class="mui-input-numbox" type="number" :value="initCount" @change="countChange"
      ref="numbox" readonly/>

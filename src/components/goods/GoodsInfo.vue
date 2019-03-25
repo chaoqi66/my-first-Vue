@@ -101,7 +101,7 @@ export default {
         getSelectedCount(count){
             //把值保存到data
             this.selectedCount=count
-            console.log(this.selectedCount)
+            // console.log(this.selectedCount)
         }
     }
 }
