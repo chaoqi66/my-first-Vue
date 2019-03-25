@@ -1,4 +1,4 @@
-var htmlwp=require("html-webpack-plugin")
+const htmlwp=require("html-webpack-plugin")
 
 const path = require('path')
 

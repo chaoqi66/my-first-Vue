@@ -65,15 +65,17 @@ export default {
             this.ballflag=!this.ballflag;
 
             //拼接出一个要保存到 store 里面的 car数组 中的商品信息对象
-            // var goodsinfo= {
-            //     id: this.id,
-            //     count: this.selectedCount,
-            //     price: this.goodsinfo.sell,
-            //     selected: true
-            // }
+            var goodsinfo= {
+                id: this.id,
+                count: this.selectedCount,
+                price: this.goodsinfo.sell,
+                selected: true,
+                img: this.goodsinfo.img_url,
+                title: this.goodsinfo.title
+            }
 
-            // //调用store中的mutation来保存
-            // this.$store.commit('addtocar', goodsinfo)
+            //调用store中的mutation来保存
+            this.$store.commit('addtocar', goodsinfo)
         },
         beforeEnter(el) {
             el.style.transform="translate(0,0)"

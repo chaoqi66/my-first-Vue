@@ -29,34 +29,91 @@ import './lib/MUI/css/mui.css'
 import './lib/MUI/css/icons-extra.css'
 
 //注册vuex
-// import Vuex from 'vuex'
-// Vue.ues(Vuex)
-// var store=new Vuex.Store({
-//   state: {
-//     car: []    //把购物车里的数据用一个数组储存起来，包含id,count,price,selected
-//   },
-//   mutations: {
-//     addtocar(state,goodsinfo){
-//       //开始认为没找到
-//       var flag = false
+import Vuex from 'vuex'
+Vue.use (Vuex)
+//每当刷新网页，从本地中获取car数组
+var car = JSON.parse(localStorage.getItem('car') || '[]')
+var store=new Vuex.Store({
+  state: {
+    car: car    //把购物车里的数据用一个数组储存起来，包含id,count,price,selected
+  },
+  mutations: {
+    addtocar(state,goodsinfo){
+      //开始认为没找到
+      var flag = false
 
-//       state.car.some(item => {
-//         if (item.id == goodsinfo.id) {
-//           item.count += parseInt(goodsinfo.count)
-//           flag = true
-//           return true
-//         }
-//       })
+      state.car.some(item => {
+        if (item.id == goodsinfo.id) {
+          item.count += parseInt(goodsinfo.count)
+          flag = true
+          return true
+        }
+      })
 
-//       // 如果最终，循环完毕，得到的 flag 还是 false，则把商品数据直接 push 到 购物车中
-//       if (!flag) {
-//         state.car.push(goodsinfo)
-//       }
+      // 如果最终，循环完毕，得到的 flag 还是 false，则把商品数据直接 push 到 购物车中
+      if (!flag) {
+        state.car.push(goodsinfo)
+      }
 
-//     }
-//   },
-//   getters: {}
-// })
+      //当更新car之后，把数据存储到本地的localStorage之中
+      localStorage.setItem('car', JSON.stringify(state.car))
+
+    },
+    updateGoodsInfo(state,goodsinfo){
+      state.car.some(item => {
+        if(item.id===goodsinfo.id){
+          item.count=parseInt(goodsinfo.count)
+          return true
+        }
+      })
+
+      //修改之后也要保存
+      localStorage.setItem('car', JSON.stringify(state.car))
+    },
+    removecar(state,id){
+      state.car.some((item, i) => {
+        if(item.id==id){
+          state.car.splice(i, 1)
+          return true
+        }
+      })
+      localStorage.setItem('car', JSON.stringify(state.car))
+
+    },
+    updateSelected(state,info){
+      state.car.some(item => {
+        if(item.id==info.id){
+          item.selected=info.selected
+          return true
+        }
+      })
+      localStorage.setItem('car', JSON.stringify(state.car))
+    }
+  },
+  getters: {
+    getAllCount(state){
+      var c = 0;
+      state.car.forEach(item => {
+        c += item.count
+      });
+      return c;
+    },
+    getCountAndVal(state){
+      var o ={
+        count: 0,
+        val: 0
+      }
+
+      state.car.forEach(item => {
+        if(item.selected){
+          o.count += item.count
+          o.val += item.count*item.price
+        }
+      })
+      return o
+    }
+  }
+})
 
 
 //导入APP根组件
@@ -75,5 +132,5 @@ var vm=new Vue({
   el:'#app',
   render: c =>c(app),
   router,    //挂载到实例上去
-  // store
+  store
 })
