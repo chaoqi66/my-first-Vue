@@ -30,8 +30,8 @@ export default {
     
     methods: {
         getgoodslist(){
-            this.$axios.get('/static/mock/goodslist.json').then(res => {
-                this.goodslist=res.data.message
+            this.$axios.get('http://47.102.154.102:8000/api/v1/common/goods').then(res => {
+                this.goodslist=res.data
             })
         }
     },

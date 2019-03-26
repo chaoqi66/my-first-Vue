@@ -57,8 +57,8 @@ export default {
     },
     methods:{
         getgoodsinfo(){
-            this.$axios.get('/static/mock/goodslist.json').then(res => {
-                this.goodsinfo=res.data.message[this.id-1]
+            this.$axios.get("http://47.102.154.102:8000/api/v1/common/goods/"+this.id).then(res => {
+                this.goodsinfo=res.data
             })
         },
         addcar(){
