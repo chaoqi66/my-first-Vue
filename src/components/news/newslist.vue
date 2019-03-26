@@ -7,7 +7,7 @@
 					<div class="mui-media-body">
 						<h1>{{ itme.title }}</h1>
 						<p class='mui-ellipsis'>
-                            <span>发布时间：{{ itme.add_time }}</span>
+                            <span>发布时间：{{ itme.created_time | dateFormat }}</span>
                             <span>点击：{{ itme.click }} </span>
                         </p>
 					</div>
@@ -28,8 +28,8 @@ export default {
 	
     methods: {
 		getNewsList(){
-			this.$axios.get('/static/mock/getnewslist.json').then(res => {
-				this.newslist=res.data.message
+			this.$axios.get('http://47.102.154.102:8000/api/v1/common/news').then(res => {
+				this.newslist=res.data
 			})
 		}
 	},

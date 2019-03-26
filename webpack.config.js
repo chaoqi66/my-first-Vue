@@ -3,16 +3,16 @@ const htmlwp=require("html-webpack-plugin")
 const path = require('path')
 
 module.exports = {
-    entry: './src/main.js',
-    output: {
-        path: __dirname + '/dist',
-        filename: 'build.js'
-    },
+    entry: path.resolve(__dirname, './src/main.js'), // 入口文件
+    output: { // 指定输出选项
+    path: path.resolve(__dirname, './dist'), // 输出路径
+    filename: 'build.js' // 指定输出文件的名称
+  },
     mode: 'development' ,// 设置mode
     plugins: [
         new htmlwp({
             filename: 'index.html',     //指定生成的文件，名字随便
-            template: path.join(__dirname, './src/index.html')     //我们的模板文件
+            template: path.resolve(__dirname, './index.html')     //我们的模板文件
         })
     ],
     module: { // 这个节点，用于配置 所有 第三方模块 加载器 

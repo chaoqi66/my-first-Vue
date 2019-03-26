@@ -24,9 +24,11 @@ import MintUI from 'mint-ui'
 Vue.use(MintUI)
 import 'mint-ui/lib/style.css'
 
+
 //导入MUI
-import './lib/MUI/css/mui.css'
+import './lib/MUI/css/mui.min.css'
 import './lib/MUI/css/icons-extra.css'
+import './lib/MUI/css/style.css'
 
 //注册vuex
 import Vuex from 'vuex'

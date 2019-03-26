@@ -35,7 +35,7 @@ export default {
     },
     methods: {
         getcomment(){
-            this.$axios.get('http://47.102.154.102/api/v1/common/topic').then(res =>{
+            this.$axios.get('http://47.102.154.102:8000/api/v1/common/topic').then(res =>{
                 this.comments=res.data
             })
         },
@@ -49,7 +49,7 @@ export default {
             // }
             
 
-            this.$axios.post('http://47.102.154.102/api/v1/common/topic', {
+            this.$axios.post('http://47.102.154.102:8000/api/v1/common/topic', {
                  "desc": this.msg.trim(),
                  "name": Date.now()
             },{emulateJSON: true})

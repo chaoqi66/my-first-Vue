@@ -2,7 +2,7 @@
     <div class="newsinfo">
         <h3 class="title"> {{ newsinfo.title }} </h3>
         <p class="subtitle">
-            <span>发表时间：{{ newsinfo.add_time }} </span>
+            <span>发表时间：{{ newsinfo.created_time | dateFormat }} </span>
             <span>点击次数：{{ newsinfo.click }} </span>
         </p>
         <hr>
@@ -23,8 +23,13 @@ export default {
     },
     methods: {
         getnewsinfo(){
-            this.$axios.get('/static/mock/newsinfo.json').then(res => {
-                this.newsinfo=res.data.message[this.id-1]
+            this.$axios.get('http://47.102.154.102:8000/api/v1/common/news').then(res => {
+                res.data.some(item => {
+                    if(item.id==this.id){
+                        this.newsinfo=item
+                        return true
+                    }
+                })
             })
         }
     },
