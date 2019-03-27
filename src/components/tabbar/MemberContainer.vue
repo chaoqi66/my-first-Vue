@@ -24,7 +24,10 @@
 			</form>
 			<div class="mui-content-padded">
 				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
-				<div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				<div class="link-area">
+					<router-link id='reg' to="/member/register">注册账号</router-link>
+					<span class="spliter">|</span> 
+					<router-link id='forgetPassword' to="/member/forget">忘记密码</router-link>
 				</div>
 			</div>
 			<div class="mui-content-padded oauth-area">

@@ -11,6 +11,8 @@ import PhotoList from './components/PhotoList/PhotoList.vue'
 import GoodsList from './components/goods/GoodsList.vue'
 import NewsInfo from './components/news/newsinfo.vue'
 import GoodsInfo from './components/goods/GoodsInfo.vue'
+import Forget from './components/sub/forget.vue'
+import Register from './components/sub/register.vue'
 //创建路由对象
 var router = new VueRouter({
     routes:[//配置路由规则
@@ -24,7 +26,9 @@ var router = new VueRouter({
       { path: '/home/GoodsList', component: GoodsList },
       { path: '/home/me', component: MY },
       { path: '/home/newsinfo/:id', component: NewsInfo},
-      { path: '/home/goodsinfo/:id', component: GoodsInfo}
+      { path: '/home/goodsinfo/:id', component: GoodsInfo},
+      { path: '/member/register', component: Register},
+      { path: '/member/forget', component: Forget}
     ],
     linkActiveClass: 'mui-active'
   })
