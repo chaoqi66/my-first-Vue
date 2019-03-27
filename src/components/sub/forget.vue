@@ -42,12 +42,12 @@ export default {
 	margin-top: 20px;
 }
 .mui-input-group label {
-	width: 22%;
+	width: 30%;
 }
 .mui-input-row label~input,
 .mui-input-row label~select,
 .mui-input-row label~textarea {
-	width: 78%;
+	width: 70%;
 }
 .mui-checkbox input[type=checkbox],
 .mui-radio input[type=radio] {
