@@ -68,6 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 .comment{
+    margin-bottom: 50px;
     h3{
         font-size: 18px;
     }
